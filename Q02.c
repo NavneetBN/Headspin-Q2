@@ -13,24 +13,24 @@
 
 int main()
 {
-        int l=0,i=0, c = 0, big = -1,n=0,a=0,p=0,k=0,t=0;
- 
-      char s[100]={0};
 
-       printf("Enter sentence [100char]: ");
-      
+      char s[100]={0};
+  int l=0,i=0, c = 0, big = -1,n=0,a=0,p=0,k=0,t=0;
+  
+    printf("Enter sentence [100char]: "); 
+  
     while (n < 99 && (c = getchar ()) != EOF && c != '\n')
         s[n++] = c;
 
-    s[n] = '\0';      					  //ending
+    s[n] = '\0';        //ending
 
-    if (n == 99)                                        			 //discard empty space
+    if (n == 99)                                         //discard empty space
         while ((c = getchar ()) != '\n' && c != EOF);
   
   
   
 
-  for(i=0; s[i] !='\0'; i++)l=l+1;			              // length of sentence
+  for(i=0; s[i] !='\0'; i++)l=l+1;                     // length of sentence
   
   for(int i = 0 ; i < l ; i++)
   {
@@ -43,7 +43,9 @@ int main()
       if(t > big) big = t;
       t = 0;
     }
-  }  if(t > big) big = t;                              //largest wordlength             
+  }  if(t > big) big = t;
+ 
+  printf("\n");                
 
   
   
@@ -55,27 +57,27 @@ printf("\n*");
    for (c = 0; c < n; c++)
     {
         
-        if (s[c] == ' '|| s[c] == EOF)                             //to check for spaces       
+        if (s[c] == ' '|| s[c] == EOF)                                    //to check for spaces
         {
             if(p<=big)
            {
-           for(k=0; k<(big-p); k++)printf (" "); 
+           for(k=0; k<(big-p); k++)printf (" ");                   
            }p=0;
             
-            printf ("\n");
+            printf ("*\n*");
             
         }
         else
         {  ++p; 
-            printf ("%c", s[c]);                                 //to print the string   
+            printf ("%c", s[c]);                                  //to print the string
            
         }    
      
     }
             if(p<=big)
-            for(k=0; k<(big-p); k++)printf (" ");              // to compensate spaces
+            for(k=0; k<(big-p); k++)printf (" ");                 // to compensate spaces
             printf("*\n");
-            for(i=0; i<big+2;++i)printf("*");                 //to print the stars
+            for(i=0; i<big+2;++i)printf("*");                     //to print the stars
         
     return 0;
 }
